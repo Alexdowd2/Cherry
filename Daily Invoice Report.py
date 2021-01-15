@@ -199,7 +199,7 @@ df
 if len(df) == 0:
     outlook = win32.Dispatch('outlook.application')
     mail = outlook.CreateItem(0)
-    mail.To = 'alexander.dowd@etrade.com; beth.hoffman@etrade.com; michael.zinone@etrade.com; ladonna.HawkinsRhodes@etrade.com'
+    mail.To = 'recipient1@email.com; recipient2@email.com'
     mail.Subject = 'Daily Medium-Dollar Invoice Report for Audit'
     mail.Body = "Mike, no records were identified that met the audit criteria. Let me know if you have any questions or if this is incorrect."
     mail.Send()
@@ -229,7 +229,7 @@ else:
     # send email with the audit file
     outlook = win32.Dispatch('outlook.application')
     mail = outlook.CreateItem(0)
-    mail.To = 'alexander.dowd@etrade.com; beth.hoffman@etrade.com; michael.zinone@etrade.com; ladonna.HawkinsRhodes@etrade.com'
+    mail.To = 'recipient1@email.com; recipient2@email.com'
     mail.Subject = 'Daily Medium-Dollar Invoice Report for Audit'
     mail.Body = "Mike, please see attached for invoices for audit. Let me know if you have any questions."
 
