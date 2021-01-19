@@ -9,7 +9,7 @@ import os               # operating system library to communicate with the opera
 import win32com.client  # windows API for Windows 95 and beyond. Allows communication with Outlook.
 
 
-path = os.path.expanduser("O:\Procurement Planning\Tableau\Alex Tableau\Datasources\OBIEE Audit Report\Audit Report")
+path = os.path.expanduser("path_to_save_attachment")
 today = datetime.date.today()
 
 outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
@@ -27,7 +27,7 @@ def saveattachments(subject):
             attachment.SaveAsFile(os.path.join(path, str(attachment)))
 
 # this executes the function on the email found in the Inbox today with that subject           
-saveattachments('ETRADE AP Supplier Audit Report')
+saveattachments('Email Subject')
 
 print('attachment downloaded')
 
@@ -41,11 +41,11 @@ print('attachment downloaded')
 import pandas as pd
 import numpy as np
 
-download_file = r'O:\Procurement Planning\Tableau\Alex Tableau\Datasources\OBIEE Audit Report\Audit Report\Madhukarreddy Chinna Mile.xlsx' 
+download_file = r'path_to_excelfile.xlsx' 
 
 df = pd.read_excel(download_file,
                   header = 2)
-df.to_csv(r'O:\Procurement Planning\Tableau\Alex Tableau\Datasources\OBIEE Audit Report\Audit Report\ETRADE AP Supplier Audit Report.csv',
+df.to_csv(r'path_to_excel_file.csv',
            index = None)
 
 # delete original download file
@@ -58,7 +58,7 @@ print('report save complete')
 # In[ ]:
 
 
-audit_report = pd.read_csv(r'O:\Procurement Planning\Tableau\Alex Tableau\Datasources\OBIEE Audit Report\Audit Report\ETRADE AP Supplier Audit Report.csv')
+audit_report = pd.read_csv(r'path_to_excel_file.csv')
 print('audit report read')
 
 print('reformatting dates')
@@ -68,14 +68,14 @@ audit_report = audit_report.astype({'AUDIT_TIME': 'datetime64[ns]', 'NEW_END_DAT
                                    'OLD_START_DATE': 'datetime64[ns]', 'NEW_END_DATE': 'datetime64[ns]', 
                                     'OLD_END_DATE': 'datetime64[ns]'})
 print('reading to txt')
-audit_report.to_csv(r'O:\Procurement Planning\Tableau\Alex Tableau\Datasources\OBIEE Audit Report\Audit Report\ETRADE AP Supplier Audit Report.txt',
+audit_report.to_csv(r'path_to_excel_file.txt',
                    index = False, sep = '\t')
 
 
 # In[ ]:
 
 
-path = 'O:\Procurement Planning\Tableau\Alex Tableau\Datasources\OBIEE Audit Report\Audit Report\ETRADE AP Supplier Audit Report.txt'
+path = 'path_to_excel_file.txt'
 WINDOWS_LINE_ENDING = b'\r\n'
 UNIX_LINE_ENDING = b'\n'
 
