@@ -25,10 +25,10 @@ print("")
 print("Web Navigation Steps")
 print("")
 
-driver = webdriver.Chrome(executable_path = 'O:\Procurement Planning\QA\Python\chromedriver.exe')
+driver = webdriver.Chrome(executable_path = 'path_to_chromedriver.exe')
  
 # URL of website
-url = "https://channele.corp.etradegrp.com/communities/initiative/epic/Pages/Environments.aspx"
+url = "sharepointsite.aspx"
  
 # Open the website
 driver.get(url)
@@ -109,8 +109,8 @@ df.head()
 
 # convert the csv file to an xlsx file and begin formatting
 
-df.to_excel(r'O:\Procurement Planning\QA\QA Reviews\Daily Medium-Dollar Invoice Report\Daily Invoice Report.xlsx', index = False)
-print('file read to O:Drive')
+df.to_excel(r'path_to_excel.xlsx', index = False)
+print('file read to Drive')
 
 
 # In[ ]:
@@ -122,7 +122,7 @@ import win32com.client as win32
 import datetime as dt
 from pandas.tseries.offsets import BDay
 
-path = r'O:\Procurement Planning\QA\QA Reviews\Daily Medium-Dollar Invoice Report\Daily Invoice Report.xlsx'
+path = r'path_to_excel.xlsx'
 
 df = pd.read_excel(path)
 df.replace('Unclassified',np.nan, inplace=True)
@@ -201,7 +201,7 @@ if len(df) == 0:
     mail = outlook.CreateItem(0)
     mail.To = 'recipient1@email.com; recipient2@email.com'
     mail.Subject = 'Daily Medium-Dollar Invoice Report for Audit'
-    mail.Body = "Mike, no records were identified that met the audit criteria. Let me know if you have any questions or if this is incorrect."
+    mail.Body = "Hello, no records were identified that met the audit criteria. Let me know if you have any questions or if this is incorrect."
     mail.Send()
     print('no files email sent')
 
@@ -231,7 +231,7 @@ else:
     mail = outlook.CreateItem(0)
     mail.To = 'recipient1@email.com; recipient2@email.com'
     mail.Subject = 'Daily Medium-Dollar Invoice Report for Audit'
-    mail.Body = "Mike, please see attached for invoices for audit. Let me know if you have any questions."
+    mail.Body = "Hello, please see attached for invoices for audit. Let me know if you have any questions."
 
     # attach the audit file to the email
     
