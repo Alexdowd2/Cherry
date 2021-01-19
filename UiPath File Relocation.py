@@ -8,19 +8,19 @@
 
 import pandas as pd
 
-contract_report = pd.read_excel('O:\Procurement Planning\Tableau\RPA Download\PROD\Contracts_Master.xlsx')
+contract_report = pd.read_excel('filepath.xlsx')
 print('contract report complete')
 
-requisition_report = pd.read_excel('O:\Procurement Planning\Tableau\RPA Download\PROD\Requisition_Master.xlsx')
+requisition_report = pd.read_excel('filepath.xlsx')
 print('requisition report complete')
 
-PO_report = pd.read_excel('O:\Procurement Planning\Tableau\RPA Download\PROD\PO_Master.xlsx')
+PO_report = pd.read_excel('filepath.xlsx')
 print('PO report complete')
 
-invoice_report = pd.read_excel('O:\Procurement Planning\Tableau\RPA Download\PROD\Invoice Report for Tableau_Master.xlsx')
+invoice_report = pd.read_excel('filepath.xlsx')
 print('invoice report complete')
 
-invoice_spend_report = pd.read_excel('O:\Procurement Planning\Tableau\RPA Download\PROD\Total Invoice Spend_Master.xlsx')
+invoice_spend_report = pd.read_excel('filepath.xlsx')
 print('invoice spend report complete')
 
 print("")
@@ -59,27 +59,27 @@ invoice_spend_report = invoice_spend_report[cols+['Description']]
 
 # save the files to Alex's Tableau Folder
 
-contract_report.to_excel('O:\Procurement Planning\Tableau\Alex Tableau\Datasources\EPIC Operational Metrics\Contracts_Master.xlsx',
+contract_report.to_excel('filepath.xlsx.xlsx',
                          index=False, 
                          sheet_name = 'Contract_Master')
 print('contract report relocated')
 
-requisition_report.to_excel('O:\Procurement Planning\Tableau\Alex Tableau\Datasources\EPIC Operational Metrics\Requisition_Master.xlsx',
+requisition_report.to_excel('filepath.xlsx.xlsx',
                            index=False, 
                            sheet_name = 'Requisition_Master')
 print('requisition report relocated')
 
-PO_report.to_excel('O:\Procurement Planning\Tableau\Alex Tableau\Datasources\EPIC Operational Metrics\PO_Master.xlsx',
+PO_report.to_excel('filepath.xlsx.xlsx',
                    index=False, 
                    sheet_name = 'PO_Master')
 print('PO report relocated')
 
-invoice_report.to_excel('O:\Procurement Planning\Tableau\Alex Tableau\Datasources\EPIC Operational Metrics\Invoice Report for Tableau_Master.xlsx',
+invoice_report.to_excel('filepath.xlsx.xlsx',
                         index=False, 
                         sheet_name = 'Invoice Report_Master')
 print('invoice report relocated')
 
-invoice_spend_report.to_excel('O:\Procurement Planning\Tableau\Alex Tableau\Datasources\EPIC Operational Metrics\Total Invoice Spend_Master.xlsx',
+invoice_spend_report.to_excel('filepath.xlsx.xlsx',
                               index=False, 
                               sheet_name = 'Total Invoice Spend_Master')
 
@@ -93,11 +93,11 @@ print('files relocated')
 # In[ ]:
 
 
-contract_report.to_csv(r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\EPIC Metrics\Contracts.txt")
-requisition_report.to_csv(r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\EPIC Metrics\Requisitions.txt")
-PO_report.to_csv(r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\EPIC Metrics\POs.txt")
-invoice_report.to_csv(r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\EPIC Metrics\Invoice.txt")
-invoice_spend_report.to_csv(r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\EPIC Metrics\Invoice_Spend.txt")
+contract_report.to_csv(r"filepath.txt")
+requisition_report.to_csv(r"filepath.txt")
+PO_report.to_csv(r"filepath.txt")
+invoice_report.to_csv(r"filepath.txt")
+invoice_spend_report.to_csv(r"filepath.txt")
 
 
 # ### Change line endings for Hadoop upload, if necessary
@@ -105,11 +105,11 @@ invoice_spend_report.to_csv(r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoo
 # In[ ]:
 
 
-path1 = r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\Daily Invoice Reports\12_Month_Invoice_Report_1.7.2021.txt"
-path2 = r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\Daily Invoice Reports\12_Month_Invoice_Report_1.8.2021.txt"
-path3 = r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\Daily Invoice Reports\12_Month_Invoice_Report_12.9.2020.txt"
-path4 = r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\Daily Invoice Reports\12_Month_Invoice_Report_12.11.2020.txt"
-path5 = r"O:\Procurement Planning\Tableau\Alex Tableau\Hadoop\Hadoop Files (Current)\Txt Files\Daily Invoice Reports\12_Month_Invoice_Report_12.15.2020.txt"
+path1 = r"filepath.txt.txt"
+path2 = r"filepath.txt"
+path3 = r"filepath.txt"
+path4 = r"filepath.txt"
+path5 = r"filepath.txt"
 
 # replacement strings
 WINDOWS_LINE_ENDING = b'\r\n'
