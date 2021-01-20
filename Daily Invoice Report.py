@@ -95,7 +95,7 @@ import glob          # glob is used to retrieve files/pathnames matching a speci
 import os            # this module allows python to communicate with operating systems
 import pandas as pd  # Pandas is a library for reading tables
 
-list_of_files = glob.glob(r'C:\Users\adowd\Downloads\*.csv') # * means all if need specific format then *.csv
+list_of_files = glob.glob(r'C:\Users\username\Downloads\*.csv') # * means all if need specific format then *.csv
 latest_file = max(list_of_files, key=os.path.getctime)
 
 df = pd.read_csv(latest_file, thousands=",")
