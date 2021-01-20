@@ -59,27 +59,27 @@ invoice_spend_report = invoice_spend_report[cols+['Description']]
 
 # save the files to Alex's Tableau Folder
 
-contract_report.to_excel('filepath.xlsx.xlsx',
+contract_report.to_excel('filepath.xlsx',
                          index=False, 
                          sheet_name = 'Contract_Master')
 print('contract report relocated')
 
-requisition_report.to_excel('filepath.xlsx.xlsx',
+requisition_report.to_excel('filepath.xlsx',
                            index=False, 
                            sheet_name = 'Requisition_Master')
 print('requisition report relocated')
 
-PO_report.to_excel('filepath.xlsx.xlsx',
+PO_report.to_excel('filepath.xlsx',
                    index=False, 
                    sheet_name = 'PO_Master')
 print('PO report relocated')
 
-invoice_report.to_excel('filepath.xlsx.xlsx',
+invoice_report.to_excel('filepath.xlsx',
                         index=False, 
                         sheet_name = 'Invoice Report_Master')
 print('invoice report relocated')
 
-invoice_spend_report.to_excel('filepath.xlsx.xlsx',
+invoice_spend_report.to_excel('filepath.xlsx',
                               index=False, 
                               sheet_name = 'Total Invoice Spend_Master')
 
@@ -105,7 +105,7 @@ invoice_spend_report.to_csv(r"filepath.txt")
 # In[ ]:
 
 
-path1 = r"filepath.txt.txt"
+path1 = r"filepath.txt"
 path2 = r"filepath.txt"
 path3 = r"filepath.txt"
 path4 = r"filepath.txt"
