@@ -1,0 +1,26 @@
+Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean)
+    
+On Error Resume Next
+
+Sheets("Individual Scrub").ShowAllData
+    
+    If ActiveCell.Column = 2 Then
+    
+    Sheets("Individual Scrub").ListObjects("Table1").Range.AutoFilter Field:=2, Criteria1:=ActiveCell.Value
+    Sheets("Individual Scrub").Activate
+    
+    
+    ElseIf ActiveCell.Column = 1 Then
+    
+    Sheets("Individual Scrub").ShowAllData
+                
+    Sheets("Individual Scrub").ListObjects("Table1").Range.AutoFilter Field:=1, Criteria1:=ActiveCell.Value
+    Sheets("Individual Scrub").Activate
+    
+    
+    
+    End If
+
+
+
+End Sub
