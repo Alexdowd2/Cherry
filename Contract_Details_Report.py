@@ -48,10 +48,10 @@ import numpy as np
 # Download and save the reports
 
 #specify the webdriver (broswer)
-driver = webdriver.Chrome(executable_path = 'O:\Procurement Planning\QA\Python\chromedriver.exe')
+driver = webdriver.Chrome(executable_path = 'chromedriverpath\chromedriver.exe')
  
 #URL of website
-url = "https://channele.corp.etradegrp.com/communities/initiative/epic/Pages/Environments.aspx"
+url = "sharepoint.aspx"
  
 #Open the website
 driver.get(url)
@@ -113,7 +113,7 @@ print('Document report downloaded')
 
 
 #read document report into pandas from the downloads folder
-list_of_files = glob.glob(r'C:\Users\adowd\Downloads\*.csv') #* means all if need specific format then *.csv
+list_of_files = glob.glob(r'C:\Users\User\Downloads\*.csv') #* means all if need specific format then *.csv
 latest_document_file = max(list_of_files, key=os.path.getctime)
 
 contract_documents = pd.read_csv(latest_document_file)
@@ -150,7 +150,7 @@ print('contract details report downloaded')
 
 
 #read the contract details report into pandas from the download folder
-contract_details = glob.glob(r'C:\Users\adowd\Downloads\*.csv') #* means all if need specific format then *.csv
+contract_details = glob.glob(r'C:\Users\User\Downloads\*.csv') #* means all if need specific format then *.csv
 latest_file_details = max(contract_details, key=os.path.getctime)
 
 contract_details = pd.read_csv(latest_file_details)
@@ -164,7 +164,7 @@ print('contract details report read into pandas')
 
 
 #import the original Documents report with hardcoded data
-orig_report = pd.read_excel(r'O:\Procurement Planning\QA\QA Reviews\Other QA Requests\Contract Hiearchy Reporting\Static Documents File.xlsx')
+orig_report = pd.read_excel(r'Static Documents File.xlsx')
 
 
 # In[ ]:
@@ -468,7 +468,7 @@ driver.close()
 
 #import the report to pandas
 
-two_tabs = glob.glob(r'C:\Users\adowd\Downloads\*.csv') #* means all if need specific format then *.csv
+two_tabs = glob.glob(r'C:\Users\User\Downloads\*.csv') #* means all if need specific format then *.csv
 latest_file_teams = max(two_tabs, key=os.path.getctime)
 
 teams_and_commodities = pd.read_csv(latest_file_teams)
@@ -505,14 +505,14 @@ from openpyxl import load_workbook
 
 #delete the existing file, if applicable
 try:
-    os.remove(r'O:\Procurement Planning\QA\QA Reviews\Other QA Requests\Contract Hiearchy Reporting\PythonFiles\CONTRACT DETAILS_PyMaster.xlsx')
+    os.remove(r'pathtoexistingfile.xlsx')
 except:
     pass
     
-contract_documents_concat.to_excel(r"O:\Procurement Planning\QA\QA Reviews\Other QA Requests\Contract Hiearchy Reporting\PythonFiles\CONTRACT DETAILS_PyMaster.xlsx",
+contract_documents_concat.to_excel(r"pathtonewfile.xlsx",
                             index = False)
 
-path = r"O:\Procurement Planning\QA\QA Reviews\Other QA Requests\Contract Hiearchy Reporting\PythonFiles\CONTRACT DETAILS_PyMaster.xlsx"
+path = r"pathtocontract_documents.xlsx"
 
 book = load_workbook(path)
 writer = pd.ExcelWriter(path, engine = 'openpyxl')
@@ -538,15 +538,15 @@ print("writing finished")
 
 #email the report to Nicole
 
-path = r"O:\Procurement Planning\QA\QA Reviews\Other QA Requests\Contract Hiearchy Reporting\PythonFiles\CONTRACT DETAILS_PyMaster.xlsx"
+path = r"path_to_report_location.xlsx"
 
 outlook = win32.Dispatch('outlook.application')
 mail = outlook.CreateItem(0)
-mail.To = 'alexander.dowd@etrade.com; nicole.lucarelli@etrade.com'
-mail.Subject = 'ETRADE Contract Details and Document report'
-mail.Body ="""Good morning Nicole,
+mail.To = 'email1@email.com; email2@email.com'
+mail.Subject = 'Contract Details and Document report'
+mail.Body ="""Good morning,
 
-Attached is the current ETRADE contract details and document details report.
+Attached is the current contract details and document details report.
 
 Let me know if you have any questions"""
 
