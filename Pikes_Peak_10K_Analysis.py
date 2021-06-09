@@ -4,8 +4,9 @@
 # In[ ]:
 
 
-# this code will create a combined document of males and females with gender idenfitying columns.
-# the remainder of the analysis will be in excel
+# this program is the cleansing of the Pikes Peak 10K race results for men and women
+# this code will create a combined document of males and female 10K race data and clean the file.
+# at the end, we will export our cleansed df to a csv file
 
 import pandas as pd
 import numpy as np
